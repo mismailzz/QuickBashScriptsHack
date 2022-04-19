@@ -74,3 +74,46 @@ This repository contains the quick bash help. The snippets of bash scripts/code 
 	echo $DETAIL
    
 </details>
+
+
+<details>
+<summary>If-Statement with multiple condition check or comparison operator </summary>
+<!--All you need is a blank line-->
+
+	if [[ "$STR1" == "" ]] || [[ "$STR2" == "" ]] || [[ "$STR2" == "" ]];then
+		echo "Arguments are not compelete"
+		exit  
+	fi
+   
+</details>
+
+
+<details>
+<summary>If-Else-Else_If Statement with multiple condition check or comparison operator </summary>
+<!--All you need is a blank line-->
+
+	if [[ "$STR1" == "" ]] || [[ "$STR2" == "" ]];then
+
+		echo "Arguments are not compelete"
+		exit  
+
+	else
+
+		if [[ "$STR1" -gt "$STR2" ]]
+		then
+			echo "String1: " $STR1 " String2: " $STR2
+			exit
+		elif [[( "$STR1" -gt "$STR2" )]] && [[( "$STR1" -le "$STR2" )]]
+		then
+			echo "String1: " $STR1 " String2: " $STR2
+			exit 1
+		elif [[( "$STR1" -le "$STR2" )]]
+		then
+			echo "String1: " $STR1 " String2: " $STR2
+			exit 2
+
+		fi
+
+	fi
+   
+</details>
