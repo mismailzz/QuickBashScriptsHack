@@ -117,3 +117,46 @@ This repository contains the quick bash help. The snippets of bash scripts/code 
 	fi
    
 </details>
+
+
+<details>
+<summary>Run python command in bash script <br> 
+<i>You can see that we are substituting or using variable of bash in this command. From python print we have the console output value and then we assign
+that value to the bash variable for further tasks</i>
+</summary>
+<!--All you need is a blank line-->
+
+	DAYS_LEFT=`python -c "from datetime import date; print((date($EXPIRY)-date.today()).days)"`
+	echo $DAYS_LEFT
+   
+</details>
+
+
+<details>
+<summary>Function - Declaration and call a function in bash <br> 
+<i>I use to define the function in the top of the script and if i have the command lines arguments then I declare the function after it. So we can call the function anywhere in the script</i>
+</summary>
+<!--All you need is a blank line-->
+
+	#Function definition
+	help_function(){
+	
+	echo "-----HELP FUNCTION-------"
+	echo "script.sh [OPTIONS BELOW]"
+	
+	echo "PARAMETERS"
+	echo ""
+	echo "--domain <Domain Name>"
+	echo "--dayslimitcri <Days Limit for Critical>"
+	echo "--dayslimitwarn <Days Limit for Warning>"
+	echo "--detail <Other detail>"
+	echo ""
+	
+	echo "Info: At this moment all parameters should be present for execution of script"
+	echo "-------------------------"
+	}
+	
+	#Function call
+	help_function
+   
+</details>
