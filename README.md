@@ -160,3 +160,15 @@ that value to the bash variable for further tasks</i>
 	help_function
    
 </details>
+
+	
+<details>
+<summary>Loop - Read file line by line <br> 
+</summary>
+<!--All you need is a blank line-->
+
+	while read line; do
+	  echo "$line"
+	done <file.txt
+   
+</details>
