@@ -172,3 +172,18 @@ that value to the bash variable for further tasks</i>
 	done <file.txt
    
 </details>
+	
+	
+<details>
+<summary>Loop - Simple (Iterate over a list) <br> 
+</summary>
+<!--All you need is a blank line-->
+
+	for i in element1 element2;
+	do 
+
+	echo $i
+
+	done
+   
+</details>
