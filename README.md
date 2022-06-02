@@ -118,6 +118,24 @@ This repository contains the quick bash help. The snippets of bash scripts/code 
    
 </details>
 
+<details>
+<summary>If-Statement short notes </summary>
+<!--All you need is a blank line-->
+
+```bash
+#Ref: https://unix.stackexchange.com/questions/109625/shell-scripting-z-and-n-options-with-if
+[ -z "$output2" ]  #string is null, that is, has zero length
+[ -n "$output" ] #string is not null
+[[ "$STR1" == "" ]]
+[[ "$1" == "userdel" ]]
+[[ "$STR1" -gt "$STR2" ]]
+[[( "$STR1" -le "$STR2" )]]
+[ ! -d "$dir" ] #dir does not exist
+[ "$(echo "$dirperm" | cut -c6)" != "-" ] #Command execution in if statemnet
+```
+   
+</details>
+
 
 <details>
 <summary>Run python command in bash script <br> 
@@ -196,4 +214,52 @@ that value to the bash variable for further tasks</i>
 		find ./$dir_files -prune -exec stat --printf='User: %U | Group: %G | Size: ' {} \; -exec du -sh {} \; 
 	done)   
 
+</details>
+
+<details>
+<summary>How to execute a script in execution of any command in linux? like if a user runs "id" command then after that your script would run</summary>
+<!--All you need is a blank line-->
+
+```bash
+#Define/Declare below function in /etc/bashrc 
+#~ confirm anycommand
+#Ref: https://askubuntu.com/questions/22233/always-prompt-the-user-before-executing-a-command-in-the-shell
+#We can show the message on the binaries in this way
+confirm() {
+    echo -n "Do you want to run $*? [N/y] "
+    read -N 1 REPLY
+    echo
+    if test "$REPLY" = "y" -o "$REPLY" = "Y"; then
+		"$@"
+	else
+        echo "Cancelled by user"
+    fi
+}
+```
+   
+</details>
+	
+
+<details>
+<summary>Print message on execution of userdel command in linux and do'nt allow the deletion of user</summary>
+<!--All you need is a blank line-->
+
+```bash
+#Define/Declare below function in /etc/bashrc 
+#~ confirm userdel user_name
+#We can show the message on the binaries in this way
+confirm() {
+    echo -n "Do you want to run $*? [N/y] "
+    read -N 1 REPLY
+    echo
+    if test "$REPLY" = "y" -o "$REPLY" = "Y"; then
+        if [[ "$1" == "userdel" ]]; then
+          echo "Contact to Admin"
+        fi
+    else
+        echo "Cancelled by user"
+    fi
+}
+```
+   
 </details>
