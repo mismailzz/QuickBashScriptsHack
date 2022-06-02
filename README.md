@@ -132,6 +132,8 @@ This repository contains the quick bash help. The snippets of bash scripts/code 
 [[( "$STR1" -le "$STR2" )]]
 [ ! -d "$dir" ] #dir does not exist
 [ "$(echo "$dirperm" | cut -c6)" != "-" ] #Command execution in if statemnet
+[ id ] && passing=true #if the command run sucessfull then true the passing flag
+
 ```
    
 </details>
