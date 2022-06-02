@@ -1,4 +1,4 @@
-# quickBash
+# QuickBashScriptHack..^^
 This repository contains the quick bash help. The snippets of bash scripts/code help to write the script fast. The snippets will further be added by the time, meanwhile if anyone want to contribute, we will be much happy about it. These are those snippets which I mostly use during writing the scripts.
 
 
