@@ -212,7 +212,7 @@ that value to the bash variable for further tasks</i>
 </summary>
 <!--All you need is a blank line-->
 	
-	sudo du -sh * | awk '($1~/[0-9]+\.?[0-9]*G$/)' | cut -f2 | (while read -r dir_files; do
+	du -sh * | awk '($1~/[0-9]+\.?[0-9]*G$/)' | cut -f2 | (while read -r dir_files; do
 		find ./$dir_files -prune -exec stat --printf='User: %U | Group: %G | Size: ' {} \; -exec du -sh {} \; 
 	done)   
 
