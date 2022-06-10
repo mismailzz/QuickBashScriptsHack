@@ -208,13 +208,22 @@ that value to the bash variable for further tasks</i>
 </details>
 
 <details>
-<summary>Get the files/folders from current dir having size in GB<br> 
+<summary>Get the files/folders from current dir having size in GB - Method 1<br> 
 </summary>
 <!--All you need is a blank line-->
 	
 	du -sh * | awk '($1~/[0-9]+\.?[0-9]*G$/)' | cut -f2 | (while read -r dir_files; do
 		find ./$dir_files -prune -exec stat --printf='User: %U | Group: %G | Size: ' {} \; -exec du -sh {} \; 
 	done)   
+
+</details>
+
+<details>
+<summary>Get the files/folders from current dir having size in GB - Method 2<br> 
+</summary>
+<!--All you need is a blank line-->
+	
+	find . -xdev -type f -size +1M -exec stat --printf='User: %U | Group: %G | Size: ' {} \; -exec du -sh {} \;
 
 </details>
 
